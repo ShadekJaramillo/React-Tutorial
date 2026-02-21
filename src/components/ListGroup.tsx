@@ -1,14 +1,11 @@
-import type React from "react";
-
 function ListGroup() {
   let items = ["NY", "TK", "SF", "LA"];
   items = [];
 
-  let message: React.ReactElement;
-  if (items.length === 0) {
-    message = <p>No item Found</p>;
-  } else {
-    message = (
+  let message =
+    items.length === 0 ? (
+      <p>No item found</p>
+    ) : (
       <>
         {items.map((city) => (
           <li className="list-group-item" key={city}>
@@ -17,7 +14,6 @@ function ListGroup() {
         ))}
       </>
     );
-  }
 
   return (
     <>
